@@ -18,6 +18,16 @@ pnpm workspace + Turborepo 기반 프론트엔드 모노레포입니다.
 | 인증 | `lib/auth.ts`, `lib/api-auth.ts`, `middleware.ts` | NextAuth(Kakao OAuth) + Supabase, API Route 공통 `requireAuth` 가드 |
 | 실시간 UX | `hooks/useSpeechRecognition.ts`, `useSpeechSynthesis.ts` | Web Speech API 기반 음성 입력·낭독을 채팅 UI와 결합 |
 
+## AI와 일하는 방식
+
+이 저장소는 Claude Code와 함께 만들었고, **에이전트에게 일을 맡기는 규칙을 저장소 안에 코드처럼 남겨 두었습니다.**
+
+- [`CLAUDE.md`](./CLAUDE.md) — 에이전트 작업 원칙. "완료 = 검증 완료", priority queue 운영, `scope_guard`·`stall_guard`·`completion_guard` 같은 가드 규칙, 사람에게 되묻는 시점을 정의
+- [`apps/interview-prep/.claude/commands`](./apps/interview-prep/.claude/commands) — 반복 작업을 슬래시 커맨드로 만든 스킬(`/dev`, `/seed`, `/refine-prompt`). `/refine-prompt`는 프롬프트를 역할·출력 형식·언어·길이·맥락 5가지 기준으로 점검하고, before/after를 보여준 뒤 승인받아 수정
+- [`apps/interview-prep/CLAUDE.md`](./apps/interview-prep/CLAUDE.md) — 앱의 변경 금지 제약(키는 서버에서만, LLM 호출 전 `maskPII`)을 에이전트가 어기지 않도록 명시
+
+AI를 "쓰는" 것에서 멈추지 않고, **안전하게 맡길 수 있는 구조를 설계**하는 것에 집중합니다.
+
 ## 구성
 
 ```
