@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@monorepo/ui": ["./packages/ui/src"],
+      "@monorepo/ui/*": ["./packages/ui/src/*"],
+      "@monorepo/shared": ["./packages/shared/src"],
+      "@monorepo/shared/*": ["./packages/shared/src/*"],
+      "@monorepo/config": ["./packages/config/src"],
+      "@monorepo/config/*": ["./packages/config/src/*"],
+      "@monorepo/icons": ["./packages/icons/src"],
+      "@monorepo/icons/*": ["./packages/icons/src/*"]
+    }
+  },
+  "references": [
+    { "path": "./packages/ui" },
+    { "path": "./packages/shared" },
+    { "path": "./packages/config" },
+    { "path": "./packages/icons" }
+  ]
+}

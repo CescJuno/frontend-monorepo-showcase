@@ -1,0 +1,9 @@
+.next/
+node_modules/
+.env.local
+.env.production
+interview-prep.db
+*.db
+*.db-shm
+*.db-wal
+.vercel

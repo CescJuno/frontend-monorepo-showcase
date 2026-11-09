@@ -1,0 +1,31 @@
+{
+  "name": "frontend-monorepo-showcase",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "turbo run dev --concurrency=20",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "prettier": "^3.0.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}
